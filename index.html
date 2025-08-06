@@ -13,8 +13,35 @@
     <button onclick="jogo()">Ok</button>
 
     <h1 id="resultado1"></h1>
+ <script>
+      let numS = Math.floor(Math.random() * 10) + 1;
+      console.log(numS);
 
+      function jogo() {
+        let mensagem = document.getElementById("resultado1");
+        let num = parseInt(document.getElementById("valor").value);
+
+        if (num == numS) {
+          mensagem.textContent = "Parabens você acertou!!";
+          console.log("Parabens você acertou!!");
+          return;
+        } else if (num < numS) {
+          mensagem.textContent = "Um pouco mais. Tente novamente!";
+          console.log("Um pouco mais. Tente novamente!");
+          return;
+        } else if (num > numS) {
+          mensagem.textContent = "Um pouco menos. Tente novamente!";
+          console.log("Um pouco menos. Tente novamente!");
+          return;
+        } else {
+          mensagem.textContent = "Digite um número de 1 a 10!!";
+          console.log("Digite um número de 1 a 10!!");
+          return;
+        }
+      }
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
+
 
